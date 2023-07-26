@@ -284,3 +284,208 @@ HEAD is now at d61b0ae stashing and unstashing mythe home and about pages
 umuhi@IKYK MINGW64 /d/git-exercises (dev)
 $
 ```
+### Exercise 2 
+```bash
+umuhi@IKYK MINGW64 /d/git-exercises (ft/bundle-2)
+$ git checkout main
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 3 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git pull
+Updating bdc2967..35ae1ff
+Fast-forward
+ README.md     | 282 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ about.html    |  11 +++
+ home.html     |  11 +++
+ services.html |  12 +++
+ 4 files changed, 314 insertions(+), 2 deletions(-)
+ create mode 100644 about.html
+ create mode 100644 home.html
+ create mode 100644 services.html
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git branch ft/service-redesign
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/service-redesign)
+$ git commit -m 'new changes to the service page'
+On branch ft/service-redesign
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   services.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/service-redesign)
+$ git add services.html
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/service-redesign)
+$ git commit -m 'new changes to the service page'
+[ft/service-redesign 57bab66] new changes to the service page
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/service-redesign)
+$ git push
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/service-redesign)
+$ git push --set-upstream origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 376 bytes | 125.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/CynthiaUmuhire/git-exercises/pull/new/ft/service-redesign     
+remote:
+To https://github.com/CynthiaUmuhire/git-exercises.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+branch 'ft/service-redesign' set up to track 'origin/ft/service-redesign'.
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git add services.html
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git commit -m ' the changes on the services page in the main branch'
+[main 3a03f1c]  the changes on the services page in the main branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 377 bytes | 125.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/CynthiaUmuhire/git-exercises.git
+   35ae1ff..3a03f1c  main -> main
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git checkout  ft/service-redesign
+Switched to branch 'ft/service-redesign'
+Your branch is up to date with 'origin/ft/service-redesign'.
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/service-redesign)
+$ git diff ft/services-redesign main
+fatal: ambiguous argument 'ft/services-redesign': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/service-redesign)
+$ git diff ft/service-redesign main
+diff --git a/services.html b/services.html
+index 2c5d68b..8bca958 100644
+--- a/services.html
++++ b/services.html
+@@ -1,16 +1,12 @@
+ <!DOCTYPE html>
+ <html lang="en">
+-
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>SERVICES</title>
+ </head>
+-
+ <body>
+     <h1> our servicessss!!!</h1>
+-    <h2>Come and enjoy them yourself</h2>
+-
++    <h2> come and enjoy them yourself</h2>
+ </body>
+-
+ </html>
+\ No newline at end of file
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git merge ft/service-redesign
+Auto-merging services.html
+CONFLICT (content): Merge conflict in services.html    
+Automatic merge failed; fix conflicts and then commit the result.
+
+umuhi@IKYK MINGW64 /d/git-exercises (main|MERGING)     
+services.html: needs merge
+
+umuhi@IKYK MINGW64 /d/git-exercises (main|MERGING)
+$ git reset
+Unstaged changes after reset:
+M       services.html
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git checkout  ft/service-redesign
+error: Your local changes to the following files would be overwritten by checkout:
+        services.html
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git merge ft/service-redesign
+error: Your local changes to the following files would be overwritten by merge:
+        services.html
+Please commit your changes or stash them before you merge.
+Aborting
+Merge with strategy ort failed.
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git add services.html
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git commit -m 'accepting the current changes form the ft/service-redesign branch'
+[main c1eb536] accepting the current changes form the ft/service-redesign branch
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git merge ft/ft/service-redesign
+merge: ft/ft/service-redesign - not something we can merge
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git merge ft/service-redesign
+Merge made by the 'ort' strategy.
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git add .
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git commit -m 'the merge between the ft/service-redesign branch and the main branch aboot th
+e changes made on the services.html file. '
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git push
+Enumerating objects: 2, done.
+Counting objects: 100% (2/2), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 387 bytes | 193.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/CynthiaUmuhire/git-exercises.git
+   3a03f1c..9834769  main -> main
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$
+```
