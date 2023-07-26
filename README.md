@@ -284,3 +284,7 @@ HEAD is now at d61b0ae stashing and unstashing mythe home and about pages
 umuhi@IKYK MINGW64 /d/git-exercises (dev)
 $
 ```
+### Exercise 2 
+``` bash
+
+```
