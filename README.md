@@ -760,3 +760,57 @@ To https://github.com/CynthiaUmuhire/git-exercises.git
    2de060e..43643bb  ft/home-page-redesign -> ft/home-page-redesign
 
 ```
+
+## Bundle 4
+### Exercise 1
+```bash
+umuhi@IKYK MINGW64 /d/git-exercises (ft/home-page-redesign)
+$ git checkout main 
+hire/git-copy.git
+# These two lines miraculously became one but the command for the command for adding the git-copy repo is : git remote add git-copy https://github.com/CynthiaUmuhire/git-copy. 
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git remote -v
+git-copy        https://github.com/CynthiaUmuhire/git-copy.git (fetch)
+git-copy        https://github.com/CynthiaUmuhire/git-copy.git (push)
+origin  https://github.com/CynthiaUmuhire/git-exercises.git (fetch)
+origin  https://github.com/CynthiaUmuhire/git-exercises.git (push)
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git add. 
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git add .
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git commit -m ' new changes to the home page to be pushed to both my repo andd the git-copy 
+repo'
+[main 39d8415]  new changes to the home page to be pushed to both my repo andd the git-copy repo
+ 1 file changed, 1 insertion(+)
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 370 bytes | 370.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/CynthiaUmuhire/git-exercises.git
+   4ebd265..39d8415  main -> main
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git push git-copy
+Enumerating objects: 59, done.
+Counting objects: 100% (59/59), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (55/55), done.
+Writing objects: 100% (59/59), 12.50 KiB | 800.00 KiB/s, done.
+Total 59 (delta 30), reused 3 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (30/30), done.
+To https://github.com/CynthiaUmuhire/git-copy.git
+ * [new branch]      main -> main
+``` 
