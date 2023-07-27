@@ -678,3 +678,85 @@ Waiting for the debugger to disconnect...
  1 file changed, 12 deletions(-)
  delete mode 100644 team.html
 ```
+### Exercise 2 
+```bash
+umuhi@IKYK MINGW64 /d/git-exercises (ft/faq-page)
+$ git branch ft/home-page-redesign
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/faq-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 7 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git add home.html
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git commit -m 'adding an exclamation mark in the home.html page'
+[main baab7a5] adding an exclamation mark in the home.html page
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git push
+To https://github.com/CynthiaUmuhire/git-exercises.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/CynthiaUmuhire/git-exercises.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git pull
+error: Your local changes to the following files would be overwritten by merge:
+        README.md
+Please commit your changes or stash them before you merge.
+Aborting
+$ git add .
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git commit -m 'commiting my changes  before pulling in the main branch'
+[main 7270613] commiting my changes  before pulling in the main branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git pull
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+umuhi@IKYK MINGW64 /d/git-exercises (main|MERGING)
+$ git pull
+Already up to date.
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git push
+lved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".       
+Could not apply 6cf7a72... The Readme file for the codes
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/home-page-redesign|REBASE 2/2)
+$ git rebase main
+Current branch ft/home-page-redesign is up to date.
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/home-page-redesign)
+$ git add .
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/home-page-redesign)
+$ git commit -m 'the chaanges to the home page'
+[ft/home-page-redesign 43643bb] the chaanges to the home page
+ 1 file changed, 1 insertion(+)
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/home-page-redesign)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/CynthiaUmuhire/git-exercises.git
+   2de060e..43643bb  ft/home-page-redesign -> ft/home-page-redesign
+
+```
