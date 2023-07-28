@@ -814,3 +814,123 @@ remote: Resolving deltas: 100% (30/30), done.
 To https://github.com/CynthiaUmuhire/git-copy.git
  * [new branch]      main -> main
 ``` 
+### Exercise 2
+```bash
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git branch ft/footer
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git checkout ft/footer
+Switched to branch 'ft/footer'
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/footer)
+$ touch new-changes.html
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/footer)
+$ git add  new-changes.html
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/footer)
+$ git commit -m 'new file new-changes added in the ft/footer branch'
+[ft/footer 28a0d00] new file new-changes added in the ft/footer branch
+ 1 file changed, 11 insertions(+)
+ create mode 100644 new-changes.html
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/footer)
+$ git add new-changes.html
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/footer)
+$ git commit -m 'the new modifications on the new-changes page'
+[ft/footer 90cff8a] the new modifications on the new-changes page
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/footer)
+$ git push
+fatal: The current branch ft/footer has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/footer
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/footer)
+$ git push --set-upstream origin ft/footer
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 761 bytes | 190.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/CynthiaUmuhire/git-exercises/pull/new/ft/footer
+remote:
+To https://github.com/CynthiaUmuhire/git-exercises.git
+ * [new branch]      ft/footer -> ft/footer
+branch 'ft/footer' set up to track 'origin/ft/footer'.
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/footer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git branch ft/squashing
+
+umuhi@IKYK MINGW64 /d/git-exercises (main)
+$ git checkout ft/squashing
+Switched to branch 'ft/squashing'
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/squashing)
+$ git merge --squash ft/footer
+Updating c6b607d..90cff8a
+Fast-forward
+Squash commit -- not updating HEAD
+ new-changes.html | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+ create mode 100644 new-changes.html
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/squashing)
+$ git add .
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/squashing)
+$ git commit -m 'footer changes squashing'
+[ft/squashing 9cc2dc4] footer changes squashing
+ 1 file changed, 11 insertions(+)
+ create mode 100644 new-changes.html
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/squashing)
+$ git push
+fatal: The current branch ft/squashing has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/squashing
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/squashing)
+$  git push --set-upstream origin ft/squashing
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 472 bytes | 157.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/CynthiaUmuhire/git-exercises/pull/new/ft/squashing
+remote:
+To https://github.com/CynthiaUmuhire/git-exercises.git
+ * [new branch]      ft/squashing -> ft/squashing
+branch 'ft/squashing' set up to track 'origin/ft/squashing'.
+
+umuhi@IKYK MINGW64 /d/git-exercises (ft/squashing)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+```
