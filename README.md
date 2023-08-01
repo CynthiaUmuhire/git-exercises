@@ -1049,3 +1049,26 @@ To https://github.com/CynthiaUmuhire/git-cafe-exercise.git
  * [new branch]      bug-fix -> bug-fix
 branch 'bug-fix' set up to track 'origin/bug-fix'.
 ```
+## Exercise 3
+```bash
+umuhi@IKYK MINGW64 /d/git-cafe-exercise (bug-fix)
+$ git add index-4.html
+
+umuhi@IKYK MINGW64 /d/git-cafe-exercise (bug-fix)
+$ git commit -m 'fixing the hot fix (telephone number)'
+[bug-fix 17e781e] fixing the hot fix (telephone number)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+umuhi@IKYK MINGW64 /d/git-cafe-exercise (bug-fix)
+$ git push --set-upstream origin bug-fix
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 334 bytes | 41.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/CynthiaUmuhire/git-cafe-exercise.git
+   8c8c26b..17e781e  bug-fix -> bug-fix
+branch 'bug-fix' set up to track 'origin/bug-fix'.
+```
